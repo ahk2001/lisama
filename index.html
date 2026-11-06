@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Autoescuela LISAMA | Conducir sin estrés en Alicante · Pla del Bon Repós</title>
+  <meta name="description" content="Autoescuela Lisama en Alicante. Te enseñamos a conducir sin estrés. Centro homologado DGT. Prácticas en las rutas de examen de Rabasa y Gran Vía.">
+
+  <!-- Favicon Placa 'L' Oficial Española -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23008744'/><path d='M8 6h5v15h11v5H8z' fill='%23ffffff'/></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans (Tipografia limpa do Framer DrivePro) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DRIVEPRO DESIGN SYSTEM & MOTION ENGINE
+       ========================================================================== */
+    :root {
+      /* Cores do DrivePro */
+      --pill-green: #22C55E;
+      --pill-green-hover: #16A34A;
+      --pill-blue: #2563EB;
+      --pill-blue-hover: #1D4ED8;
+      
+      --text-dark: #0F172A;
+      --text-body: #475569;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+
+      --card-white: #FFFFFF;
+      --card-bg-soft: #F8FAFC;
+      --card-border: #E2E8F0;
+
+      --dgt-amber: #F59E0B;
+      --l-green: #008744;
+
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Sombras e Curvas */
+      --radius-card: 28px;
+      --radius-banner: 22px;
+      --radius-pill: 9999px;
+      --shadow-canvas: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: #070B14;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       FUNDO 3D CANELADO AZUL MARINHO (VERTICAL FLUTED PILLARS)
+       ========================================================================== */
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      background-color: #070B14;
+      /* Pilares 3D cilíndricos com iluminação volumétrica */
+      background-image: repeating-linear-gradient(
+        to right,
+        #060913 0px,
+        #0A1022 18px,
+        #121C38 38px,
+        #1A2952 52px,
+        #243970 60px,
+        #1B2B56 70px,
+        #0F1832 86px,
+        #060913 100px
+      );
+      background-attachment: fixed;
+      background-size: 100px 100%;
+      padding: 1rem 0.5rem 3rem;
+    }
+
+    /* Vinheta suave sobre as colunas */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.25) 0%, rgba(4, 7, 14, 0.9) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Letreiro monumental translúcido atrás do card */
+    .hero-watermark-title {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(3.2rem, 14vw, 11rem);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.18);
+      text-align: center;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      margin-top: 1rem;
+      margin-bottom: -2.2rem;
+      pointer-events: none;
+      user-select: none;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    /* Container Central que segura o Card DrivePro */
+    .drivepro-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ==========================================================================
+       O CARD FLUTUANTE BRANCO (CANVAS CENTRAL)
+       ========================================================================== */
+    .main-canvas-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-canvas);
+      padding: 2rem;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      animation: cardAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ==========================================================================
+       NAVBAR DENTRO DO CARD COM SUPORTE MOBILE PROFISSIONAL
+       ========================================================================== */
+    .card-navbar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .navbar-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    /* Logo Oficial DGT Prácticas (Placa 'L' Oficial Española) */
+    .brand-l-badge {
+      width: 42px;
+      height: 42px;
+      background: #0066CC; /* Azul Oficial Placa L Prácticas DGT */
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+    }
+    .dgt-l-letter {
+      color: #FFFFFF;
+      font-size: 1.65rem;
+      font-weight: 900;
+      line-height: 1;
+      font-family: var(--font-main);
+      transform: translateY(-1px);
+    }
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .brand-sub-badge {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: #2563EB;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .brand-main-title {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .navbar-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Links Centrais (Desktop) */
+    .desktop-nav-wrap {
+      display: none;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+    .nav-links a {
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: var(--pill-blue);
+    }
+
+    /* Botão Hambúrguer Mobile */
+    .mobile-menu-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .mobile-menu-btn:hover {
+      background: #E2E8F0;
+    }
+    .mobile-menu-btn span {
+      width: 20px;
+      height: 2px;
+      background-color: var(--text-dark);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Menu Gaveta Mobile */
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid #F1F5F9;
+      animation: menuDrawerFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .mobile-drawer.open {
+      display: flex;
+    }
+
+    @keyframes menuDrawerFade {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .mobile-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      width: 100%;
+    }
+    .mobile-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0.65rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border-bottom: 1px solid #F8FAFC;
+    }
+    .mobile-nav-item:hover,
+    .mobile-nav-item:active {
+      background: #F1F5F9;
+      color: var(--pill-blue);
+      transform: translateX(3px);
+    }
+    .mobile-nav-item svg {
+      color: #94A3B8;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .mobile-nav-item:hover svg {
+      color: var(--pill-blue);
+      transform: translateX(2px);
+    }
+
+    .mobile-drawer-btn {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.92rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+      border-radius: var(--radius-pill);
+    }
+
+    /* Botões Pill */
+    .pill-btn-green {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--pill-green);
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-pill);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .pill-btn-green:hover {
+      background-color: var(--pill-green-hover);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.45);
+    }
+
+    .pill-btn-blue {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--pill-blue);
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-pill);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .pill-btn-blue:hover {
+      background-color: var(--pill-blue-hover);
+      transform: translateY(-2px) scale(1.01);
+    }
+
+    /* ==========================================================================
+       BANNER HERO INTERNO (FOTO DO VOLANTE COM OVERLAY E ANIMAÇÃO)
+       ========================================================================== */
+    .hero-banner {
+      width: 100%;
+      min-height: 480px;
+      border-radius: var(--radius-banner);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3.5rem 2.5rem;
+      background: #0F172A;
+    }
+
+    .hero-banner-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.65) contrast(1.1);
+      transition: transform 0.8s ease;
+    }
+    .hero-banner:hover .hero-banner-bg {
+      transform: scale(1.03);
+    }
+
+    .hero-banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 660px;
+    }
+
+    .hero-banner-title {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+
+    .hero-banner-desc {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.55;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    .hero-banner-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+    /* Botão Compacto e Refinado para Ver Permisos */
+    .btn-hero-courses {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: var(--pill-blue);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-pill);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn-hero-courses:hover {
+      background-color: var(--pill-blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+    }
+    .btn-hero-courses svg {
+      transition: transform 0.2s ease;
+    }
+    .btn-hero-courses:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Prova Social Flutuante (DrivePro Original - Duas Linhas Compactas) */
+    .social-proof-pill {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 0.6rem 1.15rem;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    }
+    .avatar-stack {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .avatar-stack img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #FFFFFF;
+      margin-left: -8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .avatar-stack img:first-child {
+      margin-left: 0;
+    }
+    .proof-text-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+    .proof-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.15;
+      white-space: nowrap; /* Apenas este texto não quebra entre palavras */
+    }
+    .proof-stars {
+      font-size: 0.74rem;
+      color: #F59E0B;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       FAIXA DE ESTATÍSTICAS E CONFIANÇA (MICRO-CARDS MODERNOS DRIVEPRO)
+       ========================================================================== */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+    }
+    .stat-box {
+      background: var(--card-bg-soft);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.1rem 0.75rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      transition: all 0.25s ease;
+    }
+    .stat-box:hover {
+      background: #FFFFFF;
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    }
+    .stat-num {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    /* ==========================================================================
+       SEÇÃO DE CURSOS (CARDS ELEVADOS COM CHECKMARKS)
+       ========================================================================== */
+    .courses-section {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--card-border);
+    }
+    .section-header-center {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .section-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #EFF6FF;
+      color: var(--pill-blue);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .section-headline {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .section-subtext {
+      color: var(--text-body);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Grid de Cursos */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .course-card {
+      background: var(--card-bg-soft);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .course-card:hover {
+      background: #FFFFFF;
+      border-color: #CBD5E1;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    .course-card.featured {
+      background: #FFFFFF;
+      border: 2px solid var(--pill-blue);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+    }
+    .card-top-tag {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--pill-blue);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.3rem 0.85rem;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.04em;
+    }
+
+    .course-icon {
+      width: 48px;
+      height: 48px;
+      background: #EFF6FF;
+      color: var(--pill-blue);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 1.25rem;
+    }
+    .course-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .course-desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    .course-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .course-check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+    .check-icon {
+      width: 18px;
+      height: 18px;
+      background: #DCFCE7;
+      color: #16A34A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       SEÇÃO: PASSO A PASSO (ROADMAP DRIVEPRO)
+       ========================================================================== */
+    .steps-section {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--card-border);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .step-card {
+      background: var(--card-bg-soft);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.75rem;
+      position: relative;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    .step-card:hover {
+      background: #FFFFFF;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--pill-blue);
+      margin-bottom: 1rem;
+    }
+    .step-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .step-text {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SEÇÃO: ROTAS DE EXAME DGT
+       ========================================================================== */
+    .routes-section {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--card-border);
+    }
+    .routes-grid-drivepro {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .route-card-box {
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+    }
+    .route-card-box:hover {
+      border-color: var(--dgt-amber);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+    .route-pill-badge {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #B45309;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+    .route-card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .route-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+    /* ==========================================================================
+       NOVA DOBRA: GALERIA CONTÍNUA DE ALUMNOS CON SU 'L' (IMAGENS PURAS)
+       ========================================================================== */
+    .students-gallery-section {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    /* Container do Carrossel Infinito com Máscaras Gradiente */
+    .gallery-marquee-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 2rem 0 1.25rem;
+      padding: 0.5rem 0;
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+
+    /* Trilho Infinito com Rolagem Contínua */
+    .gallery-marquee-track {
+      display: flex;
+      gap: 1.25rem;
+      width: max-content;
+      animation: marqueeInfinite 34s linear infinite;
+      will-change: transform;
+    }
+    .gallery-marquee-container:hover .gallery-marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeInfinite {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    /* Card Pura Imagem (Sem poluição de rede social, comentários ou likes) */
+    .student-photo-card {
+      width: 260px;
+      height: 320px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: #F1F5F9;
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+    .student-photo-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+    }
+
+    .student-pure-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .student-photo-card:hover .student-pure-img {
+      transform: scale(1.05);
+    }
+
+    /* Link Discreto e Elegante para o Instagram */
+    .gallery-instagram-link-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .gallery-instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #2563EB;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .gallery-instagram-link:hover {
+      color: #1D4ED8;
+      transform: translateX(2px);
+    }
+    .gallery-instagram-link svg {
+      transition: transform 0.2s ease;
+    }
+    .gallery-instagram-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Mobile */
+    @media (max-width: 767px) {
+      .students-gallery-section {
+        margin-top: 2.25rem;
+        padding-top: 1.75rem;
+      }
+      .student-photo-card {
+        width: 200px;
+        height: 250px;
+        border-radius: 16px;
+      }
+    }
+
+    .testimonials-section {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--card-border);
+    }
+    .testimonial-showcase-wrapper {
+      max-width: 820px;
+      margin: 2rem auto 0;
+      position: relative;
+    }
+    .testimonial-showcase-box {
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 3.5rem 2.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(226, 232, 240, 0.6);
+      overflow: hidden;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .testim-big-quote-icon {
+      margin-bottom: 1.5rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .testim-big-quote-icon svg {
+      width: 44px;
+      height: 44px;
+      fill: currentColor;
+      opacity: 0.85;
+    }
+    .testim-slides-container {
+      width: 100%;
+      position: relative;
+    }
+    .testim-slide {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+    }
+    .testim-slide.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      animation: testimFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes testimFadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .testim-quote-paragraph {
+      font-size: clamp(1.1rem, 2.3vw, 1.35rem);
+      line-height: 1.65;
+      font-weight: 500;
+      color: #1E293B;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      font-style: normal;
+    }
+    .testim-author-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .testim-avatar-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), 0 0 0 2px #E2E8F0;
+    }
+    .testim-author-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      font-style: italic;
+      color: #0F172A;
+      letter-spacing: -0.01em;
+    }
+    .testim-author-sub {
+      font-size: 0.82rem;
+      color: #64748B;
+      font-weight: 600;
+    }
+    .testim-indicators {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .testim-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: #CBD5E1;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .testim-dot.active {
+      width: 28px;
+      background: var(--pill-blue);
+    }
+    .testim-dot:hover:not(.active) {
+      background: #94A3B8;
+    }
+    .testim-nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      color: #64748B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+    .testim-nav-arrow:hover {
+      background: #F8FAFC;
+      color: #0F172A;
+      border-color: #CBD5E1;
+      transform: translateY(-50%) scale(1.06);
+    }
+    .testim-arrow-prev { left: -21px; }
+    .testim-arrow-next { right: -21px; }
+    @media (max-width: 900px) {
+      .testim-nav-arrow {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .testimonial-showcase-box {
+        padding: 2.25rem 1.15rem 1.75rem;
+        min-height: auto;
+        border-radius: 18px;
+      }
+      .testim-quote-paragraph {
+        font-size: 1rem;
+        line-height: 1.55;
+        margin-bottom: 1.5rem;
+      }
+      .testim-avatar-img {
+        width: 52px;
+        height: 52px;
+      }
+      .testim-author-name {
+        font-size: 1.05rem;
+      }
+      .testim-author-sub {
+        font-size: 0.78rem;
+      }
+      .testim-nav-arrow {
+        display: none;
+      }
+    }
+
+    /* ==========================================================================
+       SEÇÃO DE CONTATO & SECRETARÍA (ESTILO CLEAN & MINIMALISTA DRIVEPRO)
+       ========================================================================== */
+    .contact-card-banner {
+      margin-top: 3.5rem;
+      background: linear-gradient(135deg, #0B132B 0%, #172554 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-banner);
+      padding: 3rem 2.5rem;
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+    }
+    .contact-banner-title {
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.65rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .contact-banner-desc {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      max-width: 540px;
+    }
+    .contact-info-clean {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .contact-info-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      min-width: 0;
+    }
+    .contact-info-row:last-child {
+      border-bottom: none;
+    }
+    .contact-row-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: rgba(37, 99, 235, 0.25);
+      color: #60A5FA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-row-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+      word-break: break-word;
+    }
+    .contact-row-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+    }
+    .contact-row-title a {
+      color: #FFFFFF;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.4);
+    }
+    .contact-row-sub {
+      font-size: 0.74rem;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+
+    .contact-banner-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: stretch;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .contact-btn-wa {
+      padding: 0.95rem 1.5rem;
+      font-size: 0.92rem;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+      justify-content: center;
+    }
+    .btn-maps-high-contrast {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-pill);
+      transition: all 0.2s ease;
+      backdrop-filter: blur(8px);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .btn-maps-high-contrast:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* Rodapé dentro do Card */
+    .card-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       BOTÃO FLUTUANTE DE WHATSAPP MOBILE COM ANEL DE DESTAQUE BRANCO
+       ========================================================================== */
+    .mobile-float-wa {
+      position: fixed;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      right: 16px;
+      z-index: 1000;
+      background-color: var(--pill-green);
+      color: #FFFFFF;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(255, 255, 255, 0.95);
+      transition: transform 0.2s ease;
+      animation: pulseRipple 2.5s infinite;
+    }
+    .mobile-float-wa:hover {
+      transform: scale(1.08);
+      background-color: var(--pill-green-hover);
+    }
+    .mobile-float-wa svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    /* ==========================================================================
+       SISTEMA DE ANIMAÇÃO DE ENTRADA SCROLL-REVEAL (60FPS PURO CSS + JS LEVE)
+       ========================================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Delays escalonados para itens de grid */
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cardAppear {
+      from { opacity: 0; transform: translateY(30px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes pulseRipple {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+      70% { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* ==========================================================================
+       DRÁSTICA OTIMIZAÇÃO RESPONSIVA (MOBILE FIRST COMPLETO)
+       ========================================================================== */
+    /* Mobile (< 768px) */
+    @media (max-width: 767px) {
+      /* Letreiro LISAMA visível no topo ao abaixar / rolar no mobile */
+      .hero-watermark-title {
+        display: block !important;
+        font-size: clamp(3rem, 17vw, 5.2rem);
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.22);
+        text-align: center;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        margin-top: 0.75rem;
+        margin-bottom: 0.35rem;
+        pointer-events: none;
+        user-select: none;
+      }
+      body {
+        padding: 0.45rem 0.35rem calc(2rem + env(safe-area-inset-bottom, 0px));
+      }
+      .main-canvas-card {
+        padding: 1.15rem 0.85rem;
+        border-radius: 18px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+      }
+      .card-navbar {
+        padding-bottom: 0.85rem;
+        margin-bottom: 1rem;
+      }
+      .brand-l-badge {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+      }
+      .dgt-l-letter {
+        font-size: 1.45rem;
+      }
+      .brand-sub-badge {
+        font-size: 0.58rem;
+      }
+      .brand-main-title {
+        font-size: 1.15rem;
+      }
+      .desktop-nav-wrap,
+      .navbar-right-actions .desktop-only-cta {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      /* Hero no Mobile: Limpo, sem textão e com botão compacto */
+      .hero-banner {
+        min-height: auto;
+        padding: 2rem 1.15rem 1.5rem;
+        border-radius: 16px;
+      }
+      .hero-banner-title {
+        font-size: clamp(1.65rem, 6.5vw, 2.1rem);
+        line-height: 1.15;
+        margin-bottom: 0.65rem;
+      }
+      .hero-banner-desc {
+        font-size: 0.88rem;
+        line-height: 1.45;
+        margin-bottom: 1rem;
+      }
+      .hero-banner-actions {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 0.25rem;
+      }
+      .btn-hero-courses {
+        width: auto;
+        padding: 0.55rem 1.1rem;
+        font-size: 0.82rem;
+      }
+
+      /* Prova social no mobile: Compacto em 2 linhas (sem quebrar o título) */
+      .social-proof-pill {
+        position: static;
+        margin-top: 1.25rem;
+        width: fit-content;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.5rem 0.95rem;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .avatar-stack img {
+        width: 28px;
+        height: 28px;
+        margin-left: -7px;
+      }
+      .proof-text-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+      }
+      .proof-title {
+        font-size: 0.78rem;
+        font-weight: 800;
+        white-space: nowrap; /* Não quebra "+200 Alumnos con su 'L'" */
+        line-height: 1.15;
+      }
+      .proof-stars {
+        font-size: 0.72rem;
+        white-space: nowrap;
+        line-height: 1.15;
+      }
+
+      /* Faixa de Estatísticas: 4 micro-cards 2x2 no mobile */
+      .stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem;
+        margin-top: 1.25rem;
+        padding-top: 0;
+        border-top: none;
+      }
+      .stat-box {
+        background: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        border-radius: 12px;
+        padding: 0.85rem 0.5rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      }
+      .stat-num {
+        font-size: 1.55rem;
+      }
+      .stat-label {
+        font-size: 0.72rem;
+        line-height: 1.25;
+      }
+
+      /* Seções com espaçamento adequado para mobile */
+      .courses-section, .steps-section, .routes-section, .testimonials-section {
+        margin-top: 2.25rem;
+        padding-top: 1.75rem;
+      }
+      .section-headline {
+        font-size: 1.65rem;
+      }
+
+      /* Banner de Contato Mobile (Limpo, sem cortes laterais) */
+      .contact-card-banner {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        gap: 1.25rem;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+      }
+      .contact-banner-title {
+        font-size: clamp(1.35rem, 5.5vw, 1.65rem);
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        word-break: break-word;
+      }
+      .contact-banner-desc {
+        font-size: 0.85rem;
+        line-height: 1.45;
+        margin-bottom: 1rem;
+      }
+      .card-footer {
+        padding-bottom: 4.5rem; /* Margem de segurança para o botão flutuante */
+      }
+    }
+
+    /* Tablet & Desktop (>= 768px) */
+    @media (min-width: 768px) {
+      .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .routes-grid-drivepro {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .mobile-menu-btn {
+        display: none !important;
+      }
+      .mobile-drawer {
+        display: none !important;
+      }
+      .desktop-nav-wrap {
+        display: flex;
+      }
+      .navbar-right-actions .desktop-only-cta {
+        display: inline-flex !important;
+      }
+      .contact-card-banner {
+        grid-template-columns: 1.3fr 1fr;
+      }
+      .card-footer {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .social-proof-pill {
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+      }
+    }
+  
+    /* ==========================================================================
+       ESTILO CARD-22 (21ST.DEV / SHADCN PLACE CARD COM CARROSSEL)
+       ========================================================================== */
+    .place-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    .place-card {
+      background: #FFFFFF;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .place-card:hover {
+      transform: scale(1.025) translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.16);
+    }
+
+    /* Imagem de Capa do Card (Única por Card) */
+    .place-card-image-wrap {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: #0F172A;
+    }
+    .place-card-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .place-card:hover .place-card-cover-img {
+      transform: scale(1.05);
+    }
+
+    /* Badges de Topo Flutuantes com Glassmorphism */
+    .place-card-top-tags {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      gap: 6px;
+      z-index: 6;
+      pointer-events: none;
+    }
+    .place-tag-pill {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #0F172A;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .place-rating-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #0F172A;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 6;
+    }
+    .star-icon {
+      color: #EAB308;
+      fill: #EAB308;
+    }
+
+    /* Conteúdo Inferior do Card-22 */
+    .place-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .place-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .place-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+    .place-top-rated-badge {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #059669;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .place-card-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .place-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* Footer do Card-22 com Preço e Botão Book Now com Seta Animada */
+    .place-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--card-border);
+      margin-top: 0.5rem;
+    }
+    .place-price-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .place-price-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .place-price-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* Botão com Seta que desliza no hover (group-hover:translate-x-1) */
+    .btn-place-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--pill-green);
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.65rem 1.2rem;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-place-book:hover {
+      background: var(--pill-green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4);
+    }
+    .btn-place-book .arrow-svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s ease;
+    }
+    .btn-place-book:hover .arrow-svg {
+      transform: translateX(4px);
+    }
+
+    @media (min-width: 640px) {
+      .place-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 639px) {
+      .place-card-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+      .btn-place-book {
+        justify-content: center;
+        width: 100%;
+        padding: 0.85rem 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Letreiro Monumental de Fundo Translúcido (DrivePro Style) -->
+  <div class="hero-watermark-title" aria-hidden="true">LISAMA</div>
+
+  <div class="drivepro-container">
+    
+    <!-- ========================================================================
+         O CARD PRINCIPAL FLUTUANTE BRANCO
+         ======================================================================== -->
+    <div class="main-canvas-card">
+      
+      <!-- Navbar Interna do Card -->
+      <header class="card-navbar">
+        <!-- Linha Superior Fixa do Header: Logo à Esquerda e Botões à Direita -->
+        <div class="navbar-header-row">
+          <div class="brand-group">
+            <!-- Logo Oficial: Placa 'L' de Prácticas DGT -->
+            <div class="brand-l-badge">
+              <span class="dgt-l-letter">L</span>
+            </div>
+            <div class="brand-title-wrap">
+              <span class="brand-sub-badge">AUTOESCUELA</span>
+              <h1 class="brand-main-title">LISAMA</h1>
+            </div>
+          </div>
+
+          <!-- Links Centrais Desktop -->
+          <nav aria-label="Navegación principal" class="desktop-nav-wrap">
+            <ul class="nav-links">
+              <li><a href="#cursos">Cursos</a></li>
+              <li><a href="#proceso">Método</a></li>
+              <li><a href="#rutas">Rutas DGT</a></li>
+              <li><a href="#alumnos-l">Aprobados</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <!-- Ações do Cabeçalho (Lado Direito) -->
+          <div class="navbar-right-actions">
+            <a href="https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20quiero%20informaci%C3%B3n%20para%20sacarme%20el%20carnet%20de%20conducir" 
+               class="pill-btn-green desktop-only-cta" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              Matrícula WhatsApp
+            </a>
+
+            <!-- Botão Menu Mobile (Fica sempre no canto direito superior) -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Menu Drawer Mobile (Abre abaixo da linha do topo, ocupando 100% de largura) -->
+        <div class="mobile-drawer" id="mobileDrawer">
+          <nav class="mobile-nav-list">
+            <a href="#cursos" class="mobile-nav-item">
+              <span>Cursos y Permisos</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#proceso" class="mobile-nav-item">
+              <span>Método de Aprobado</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#rutas" class="mobile-nav-item">
+              <span>Rutas de Examen DGT</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#alumnos-l" class="mobile-nav-item">
+              <span>Alumnos con su L</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#opiniones" class="mobile-nav-item">
+              <span>Opiniones de Alumnos</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <a href="#contacto" class="mobile-nav-item">
+              <span>Sede y Contacto</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </nav>
+
+          <a href="https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20quiero%20informaci%C3%B3n%20para%20sacarme%20el%20carnet" 
+             class="pill-btn-green mobile-drawer-btn" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.21 8.21 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.11.82.83-3.03-.19-.3a8.196 8.196 0 0 1-1.26-4.47c0-4.54 3.7-8.25 8.24-8.25m4.52 11.66c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.09 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.18-.47-.3"/></svg>
+            <span>Hablar por WhatsApp</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- ======================================================================
+           HERO BANNER ARREDONDADO (COM FOTO DO VOLANTE)
+           ====================================================================== -->
+      <section class="hero-banner" id="hero">
+        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1200&auto=format&fit=crop" 
+             alt="Conduciendo coche de autoescuela en Alicante" 
+             class="hero-banner-bg" 
+             loading="eager">
+
+        <div class="hero-banner-content">
+          <h2 class="hero-banner-title">
+            Te enseñamos a conducir sin estrés ni nervios
+          </h2>
+          <p class="hero-banner-desc">
+            Tu carnet en Alicante sin estrés. Prácticas con máxima paciencia en las rutas de examen DGT.
+          </p>
+
+          <div class="hero-banner-actions">
+            <a href="#cursos" class="btn-hero-courses">
+              <span>Ver Permisos y Cursos</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Prova Social Flutuante (DrivePro Original) -->
+        <div class="social-proof-pill">
+          <div class="avatar-stack">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="Alumna aprobada">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Alumno aprobado">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Alumna con L">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt="Alumno con carnet">
+          </div>
+          <div class="proof-text-wrap">
+            <span class="proof-title">+200 Alumnos con su 'L'</span>
+            <span class="proof-stars">★★★★★ 4.8 / 5 Google</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           RÉGUA DE ESTATÍSTICAS E CONFIANÇA
+           ====================================================================== -->
+      <div class="stats-strip reveal">
+        <div class="stat-box">
+          <span class="stat-num" style="color: #D97706;">4.8 ★</span>
+          <span class="stat-label">+200 Reseñas Google</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" style="color: #2563EB;">94%</span>
+          <span class="stat-label">Aprobados teórica a la 1ª</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" style="color: #0F172A;">1 a 1</span>
+          <span class="stat-label">Mismo coche en examen</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" style="color: #059669;">DGT</span>
+          <span class="stat-label">Centro Oficial Alicante</span>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           SEÇÃO DE CURSOS: NOVO FORMATO INTERATIVO (CARD-22 COM CARROSSEL)
+           ====================================================================== -->
+      <section class="courses-section" id="cursos">
+        <div class="section-header-center reveal">
+          <span class="section-tag-pill">Permisos Oficiales</span>
+          <h2 class="section-headline">Nuestros Cursos de Conducción</h2>
+          <p class="section-subtext">Explora las fotos reales de nuestras clases prácticas y elige tu curso.</p>
+        </div>
+
+        <div class="place-cards-grid">
+          
+          <!-- CARD 1: PERMISO B (COCHE MANUAL) -->
+          <article class="place-card reveal delay-1">
+            <div class="place-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800&auto=format&fit=crop" 
+                   alt="Clases prácticas de coche en Alicante" 
+                   class="place-card-cover-img" 
+                   loading="lazy">
+
+              <!-- Tags de Topo Esquerda -->
+              <div class="place-card-top-tags">
+                <span class="place-tag-pill">Permiso B</span>
+                <span class="place-tag-pill">Coche</span>
+              </div>
+
+              <!-- Avaliação Topo Direita -->
+              <div class="place-rating-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>4.8</span>
+              </div>
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="place-card-body">
+              <div>
+                <div class="place-card-header">
+                  <h3 class="place-card-title">Permiso B (Coche)</h3>
+                  <span class="place-top-rated-badge">Top rated</span>
+                </div>
+                <div class="place-card-meta">
+                  <span>Prácticas en Rabasa</span> &bull; <span>Mismo coche</span>
+                </div>
+                <p class="place-card-desc">
+                  Preparación integral teórica y práctica en circuitos reales de la DGT con profesores pacientes y cero estrés.
+                </p>
+              </div>
+
+              <div class="place-card-footer">
+                <div class="place-price-wrap">
+                  <span class="place-price-val">Desde 137€</span>
+                  <span class="place-price-label">matrícula y test DGT</span>
+                </div>
+                <a href="https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20quiero%20informaci%C3%B3n%20para%20matricularme%20en%20el%20Permiso%20B" 
+                   class="btn-place-book" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  <span>Matrícula WhatsApp</span>
+                  <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2: TEÓRICA EXPRESS INTENSIVA -->
+          <article class="place-card reveal delay-2">
+            <div class="place-card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" 
+                   alt="Material de estudio y test teórica autoescuela" 
+                   class="place-card-cover-img" 
+                   loading="lazy">
+
+              <div class="place-card-top-tags">
+                <span class="place-tag-pill">Teórica</span>
+                <span class="place-tag-pill">Intensivo</span>
+              </div>
+
+              <div class="place-rating-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>4.9</span>
+              </div>
+            </div>
+
+            <div class="place-card-body">
+              <div>
+                <div class="place-card-header">
+                  <h3 class="place-card-title">Teórica Express</h3>
+                  <span class="place-top-rated-badge" style="color: #2563EB; background: #EFF6FF; border-color: #BFDBFE;">Rápido</span>
+                </div>
+                <div class="place-card-meta">
+                  <span>Online + Aula</span> &bull; <span>Dudas trampa DGT</span>
+                </div>
+                <p class="place-card-desc">
+                  Aprende la teoría en tiempo récord sin perder convocatorias con plataforma de test 24/7 y tutorías directas.
+                </p>
+              </div>
+
+              <div class="place-card-footer">
+                <div class="place-price-wrap">
+                  <span class="place-price-val">Test 24/7</span>
+                  <span class="place-price-label">acceso ilimitado en app</span>
+                </div>
+                <a href="https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20quisiera%20consultar%20fechas%20del%20curso%20te%C3%B3rico%20intensivo" 
+                   class="btn-place-book" 
+                   style="background: var(--pill-blue);"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  <span>Consultar Teórica</span>
+                  <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3: CLASES DE RECICLAJE (FOTO REAL DO CARRO OFICIAL LISAMA) -->
+          <article class="place-card reveal delay-3">
+            <div class="place-card-image-wrap">
+              <img src="assets/carro-lisama.jpg" 
+                   alt="Coche oficial de prácticas de Autoescuela Lisama en Alicante" 
+                   class="place-card-cover-img" 
+                   loading="lazy">
+
+              <div class="place-card-top-tags">
+                <span class="place-tag-pill">Reciclaje</span>
+                <span class="place-tag-pill">Amaxofobia</span>
+              </div>
+
+              <div class="place-rating-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>4.8</span>
+              </div>
+            </div>
+
+            <div class="place-card-body">
+              <div>
+                <div class="place-card-header">
+                  <h3 class="place-card-title">Clases de Reciclaje</h3>
+                  <span class="place-top-rated-badge" style="color: #475569; background: #F1F5F9; border-color: #E2E8F0;">Sin estrés</span>
+                </div>
+                <div class="place-card-meta">
+                  <span>Autovía A-70</span> &bull; <span>Paciencia total</span>
+                </div>
+                <p class="place-card-desc">
+                  Para personas con carnet que desean recuperar la soltura y perder el miedo al volante a su propio ritmo.
+                </p>
+              </div>
+
+              <div class="place-card-footer">
+                <div class="place-price-wrap">
+                  <span class="place-price-val">A tu ritmo</span>
+                  <span class="place-price-label">bonos de prácticas sueltas</span>
+                </div>
+                <a href="https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20tengo%20carnet%20y%20quiero%20hacer%20clases%20de%20reciclaje" 
+                   class="btn-place-book" 
+                   style="background: #334155;"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  <span>Consultar Bonos</span>
+                  <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SEÇÃO: COMO É O PROCESSO (ROADMAP PASSO A PASSO)
+           ====================================================================== -->
+      <section class="steps-section" id="proceso">
+        <div class="section-header-center reveal">
+          <span class="section-tag-pill">El Método Lisama</span>
+          <h2 class="section-headline">¿Cómo es el Proceso hacia tu 'L'?</h2>
+          <p class="section-subtext">Un camino directo y sin rodeos desde tu matrícula hasta el aprobado oficial.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card reveal delay-1">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Matrícula y Test Oficiales</h3>
+            <p class="step-text">Accedes de inmediato a la plataforma con test reales de tráfico y explicaciones de las dudas trampa de la DGT.</p>
+          </div>
+
+          <div class="step-card reveal delay-2">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Prácticas en Rabasa y Gran Vía</h3>
+            <p class="step-text">Entrenas en las zonas exactas donde examinan los examinadores de Alicante con docencia paciente y sin estrés.</p>
+          </div>
+
+          <div class="step-card reveal delay-3">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Examen Oficial con tu Coche</h3>
+            <p class="step-text">Te examinas con el mismo coche que ya dominas al milímetro, garantizando tacto de embrague y tu placa 'L' a la primera.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SEÇÃO: ROTAS DE EXAME EM ALICANTE
+           ====================================================================== -->
+      <section class="routes-section" id="rutas">
+        <div class="section-header-center reveal">
+          <span class="section-tag-pill">Zonas de Examen DGT</span>
+          <h2 class="section-headline">Dónde te vas a Examinar en Alicante</h2>
+          <p class="section-subtext">Te entrenamos específicamente para dominar las trampas del examinador.</p>
+        </div>
+
+        <div class="routes-grid-drivepro">
+          <div class="route-card-box reveal delay-1">
+            <span class="route-pill-badge">Punto Crítico</span>
+            <h3 class="route-card-title">Rabasa & Jefatura DGT</h3>
+            <p class="route-card-desc">Salida oficial del centro examinador, glorietas partidas y maniobras de estacionamiento milimétrico.</p>
+          </div>
+
+          <div class="route-card-box reveal delay-2">
+            <span class="route-pill-badge">Tráfico Urbano</span>
+            <h3 class="route-card-title">Gran Vía & Vía Parque</h3>
+            <p class="route-card-desc">Glorietas de triple carril, cambios continuos de carril, pasos ciclistas y prioridades peatonales.</p>
+          </div>
+
+          <div class="route-card-box reveal delay-3">
+            <span class="route-pill-badge">Vía Rápida</span>
+            <h3 class="route-card-title">Autovía A-70 & San Vicente</h3>
+            <p class="route-card-desc">Carriles de aceleración a 100-120 km/h, distancias de seguridad y salidas de deceleración fluidas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           NOVA DOBRA: ALUMNOS CON SU 'L' NO INSTAGRAM (@LISAMA512)
+           Carrossel Infinito com Fotos Reais de Alunos Aprovados
+           ====================================================================== -->
+      <!-- ======================================================================
+           SEÇÃO NOVA: GALERIA DE ALUMNOS CON SU 'L' (IMAGENS ORIGINAIS)
+           Carrossel Infinito com Fotos Puras dos Aprovados
+           ====================================================================== -->
+      <section class="students-gallery-section reveal" id="alumnos-l">
+        <div class="section-header-center">
+          <span class="section-tag-pill">Nuevos Conductores</span>
+          <h2 class="section-headline">Alumnos con su 'L'</h2>
+          <p class="section-subtext">Fotografías de los últimos alumnos que han aprobado su carnet de conducir con nosotros en Alicante.</p>
+        </div>
+
+        <!-- Carrossel Infinito (Fotos Reais de Alunos da Autoescuela Lisama) -->
+        <div class="gallery-marquee-container" id="galleryMarquee">
+          <div class="gallery-marquee-track">
+            <!-- ================= SET 1: FOTOS REAIS OFICIAIS LISAMA ================= -->
+            <div class="student-photo-card">
+              <img src="assets/aprobados/aluno-1.jpg" alt="Alumna de Autoescuela Lisama con la placa L junto al coche de prácticas" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card">
+              <img src="assets/aprobados/aluno-2.jpg" alt="Alumno de Autoescuela Lisama sonriente con su L aprobada" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card">
+              <img src="assets/aprobados/aluno-3.jpg" alt="Alumnos en la secretaría de Autoescuela Lisama con su carnet" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card">
+              <img src="assets/aprobados/aluno-4.jpg" alt="Alumna celebrando el apto con la profesora junto al coche de Lisama" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card">
+              <img src="assets/aprobados/aluno-5.jpg" alt="Alumnas aprobadas con su L oficial en Autoescuela Lisama Alicante" class="student-pure-img" loading="lazy">
+            </div>
+
+            <!-- ================= SET 2: CLONE PARA LOOP INFINITO PERFEITO ================= -->
+            <div class="student-photo-card" aria-hidden="true">
+              <img src="assets/aprobados/aluno-1.jpg" alt="Alumna de Autoescuela Lisama con la placa L junto al coche de prácticas" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card" aria-hidden="true">
+              <img src="assets/aprobados/aluno-2.jpg" alt="Alumno de Autoescuela Lisama sonriente con su L aprobada" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card" aria-hidden="true">
+              <img src="assets/aprobados/aluno-3.jpg" alt="Alumnos en la secretaría de Autoescuela Lisama con su carnet" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card" aria-hidden="true">
+              <img src="assets/aprobados/aluno-4.jpg" alt="Alumna celebrando el apto con la profesora junto al coche de Lisama" class="student-pure-img" loading="lazy">
+            </div>
+            <div class="student-photo-card" aria-hidden="true">
+              <img src="assets/aprobados/aluno-5.jpg" alt="Alumnas aprobadas con su L oficial en Autoescuela Lisama Alicante" class="student-pure-img" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-instagram-link-wrap">
+          <a href="https://www.instagram.com/lisama512/" target="_blank" rel="noopener noreferrer" class="gallery-instagram-link">
+            <span>Ver más aprobados en nuestro Instagram @lisama512</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="testimonials-section" id="opiniones">
+        <div class="section-header-center reveal">
+          <span class="section-tag-pill">Alumnos Aprobados</span>
+          <h2 class="section-headline">Lo que Opinan de Autoescuela Lisama</h2>
+          <p class="section-subtext">Reseñas reales verificadas en Google Maps de nuestros vecinos de Alicante.</p>
+        </div>
+
+        <div class="testimonial-showcase-wrapper reveal">
+          <!-- Card de Fundo Branco Estilo Editorial -->
+          <div class="testimonial-showcase-box" id="testimonialBox">
+            
+            <!-- Ícone Monumental de Aspas Centrais -->
+            <div class="testim-big-quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+            </div>
+
+            <!-- Slides Container (3 Feedbacks) -->
+            <div class="testim-slides-container">
+              <!-- Feedback 1 -->
+              <div class="testim-slide active" data-index="0">
+                <p class="testim-quote-paragraph">
+                  "Tenía pánico a las rotondas de Gran Vía y al examen en Rabasa. Liliana tiene una paciencia infinita y me enseñó los puntos de referencia exactos. ¡Aprobé a la primera y sin nervios!"
+                </p>
+                <div class="testim-author-wrap">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Carlos Mendoza" class="testim-avatar-img">
+                  <h3 class="testim-author-name">Carlos Mendoza</h3>
+                  <span class="testim-author-sub">@carlos_m · Permiso B · Pla del Bon Repós</span>
+                </div>
+              </div>
+
+              <!-- Feedback 2 -->
+              <div class="testim-slide" data-index="1">
+                <p class="testim-quote-paragraph">
+                  "Venía desmotivada de otra autoescuela de Alicante donde sentía que solo me sacaban el dinero. En Lisama el ambiente fue inmejorable, coche dócil y un trato humano insuperable."
+                </p>
+                <div class="testim-author-wrap">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Lucía Valero" class="testim-avatar-img">
+                  <h3 class="testim-author-name">Lucía Valero</h3>
+                  <span class="testim-author-sub">@lucia_v · Aprobada a la 1ª · Alicante Centro</span>
+                </div>
+              </div>
+
+              <!-- Feedback 3 -->
+              <div class="testim-slide" data-index="2">
+                <p class="testim-quote-paragraph">
+                  "Necesitaba el carnet urgente por motivos de trabajo en el puerto. El intensivo teórico fue clave y las prácticas directas a lo que pide el examinador de la DGT en Alicante."
+                </p>
+                <div class="testim-author-wrap">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Javier Gómez" class="testim-avatar-img">
+                  <h3 class="testim-author-name">Javier Gómez</h3>
+                  <span class="testim-author-sub">@javier_g · Teórica Express · San Vicente</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Setas de Navegação Desktop -->
+            <button class="testim-nav-arrow testim-arrow-prev" id="testimPrevBtn" aria-label="Opinión anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="testim-nav-arrow testim-arrow-next" id="testimNextBtn" aria-label="Siguiente opinión">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+
+            <!-- Indicadores Interativos / Bolinhas -->
+            <div class="testim-indicators" id="testimDots">
+              <button class="testim-dot active" data-slide="0" aria-label="Ir a opinión 1"></button>
+              <button class="testim-dot" data-slide="1" aria-label="Ir a opinión 2"></button>
+              <button class="testim-dot" data-slide="2" aria-label="Ir a opinión 3"></button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           CARD BANNER DE CONTATO & SEDE (PARTE INFERIOR)
+           ====================================================================== -->
+      <section class="contact-card-banner reveal" id="contacto">
+        <div>
+          <h2 class="contact-banner-title">Pasa por secretaría o escríbenos</h2>
+          <p class="contact-banner-desc">
+            Estamos en Pla del Bon Repós. Te resolvemos cualquier duda sobre matrículas, clases y tasas DGT sin compromiso.
+          </p>
+
+          <div class="contact-info-clean">
+            <!-- Dirección -->
+            <div class="contact-info-row">
+              <span class="contact-row-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </span>
+              <div class="contact-row-text">
+                <span class="contact-row-title">C/ Cardenal Payá, 8</span>
+                <span class="contact-row-sub">Pla del Bon Repós · Alicante</span>
+              </div>
+            </div>
+
+            <!-- Teléfonos -->
+            <div class="contact-info-row">
+              <span class="contact-row-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </span>
+              <div class="contact-row-text">
+                <span class="contact-row-title"><a href="tel:965598824">965 59 88 24</a> &nbsp;·&nbsp; <a href="tel:689810417">689 810 417</a></span>
+                <span class="contact-row-sub">Llamadas directas o WhatsApp</span>
+              </div>
+            </div>
+
+            <!-- Horario -->
+            <div class="contact-info-row">
+              <span class="contact-row-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              </span>
+              <div class="contact-row-text">
+                <span class="contact-row-title">Lun a Vie 10:00–13:00 / 16:30–18:30</span>
+                <span class="contact-row-sub">WhatsApp continuado 09:00–20:30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-banner-actions">
+          <a href="https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20quisiera%20consultar%20plazas%20y%20precios%20para%20matricularme" 
+             class="pill-btn-green contact-btn-wa" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.21 8.21 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.11.82.83-3.03-.19-.3a8.196 8.196 0 0 1-1.26-4.47c0-4.54 3.7-8.25 8.24-8.25m4.52 11.66c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.09 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.18-.47-.3"/></svg>
+            <span>Hablar por WhatsApp</span>
+          </a>
+
+          <a href="https://www.google.com/maps/place/Autoescuela+LISAMA/@38.3470335,-0.4955497,17z/data=!3m1!4b1!4m6!3m5!1s0xd623708a8085c1d:0x737cc53fcd4b8f2!8m2!3d38.3470335!4d-0.4955497" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-maps-high-contrast">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#EF4444" style="flex-shrink:0;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Ver en Google Maps</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Rodapé Interno do Card -->
+      <footer class="card-footer">
+        <p>© <span id="year">2026</span> Autoescuela LISAMA. Centro Homologado DGT Alicante. C/ Cardenal Payá, 8, 03005 Alicante.</p>
+        <p><a href="https://www.instagram.com/lisama512/" target="_blank" rel="noopener noreferrer" style="color: var(--pill-blue); font-weight: 600;">Instagram Oficial (@lisama512)</a></p>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Botão Flutuante de WhatsApp Mobile -->
+  <a href="https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20quiero%20hacer%20una%20consulta" 
+     class="mobile-float-wa" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.21 8.21 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.11.82.83-3.03-.19-.3a8.196 8.196 0 0 1-1.26-4.47c0-4.54 3.7-8.25 8.24-8.25m4.52 11.66c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.09 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.18-.47-.3"/></svg>
+  </a>
+
+  <!-- ========================================================================
+       SCRIPTS: MOTION & INTERAÇÃO MOBILE
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Atualizar ano no rodapé
+      const yr = document.getElementById('year');
+      if (yr) yr.textContent = new Date().getFullYear();
+
+      // 2. Menu Mobile Drawer Toggle
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const drawer = document.getElementById('mobileDrawer');
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', function () {
+          const isOpen = drawer.classList.contains('open');
+          drawer.classList.toggle('open');
+          menuBtn.classList.toggle('active');
+          menuBtn.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Fechar ao clicar em qualquer link
+        drawer.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            drawer.classList.remove('open');
+            menuBtn.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 3. Sistema de Animação de Entrada Scroll-Reveal (IntersectionObserver super leve)
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach(el => revealObserver.observe(el));
+      } else {
+        // Fallback para navegadores legados
+        reveals.forEach(el => el.classList.add('active'));
+      }
+
+      // 5. Carrossel Automático de Feedbacks (Fundo Branco Estilo Editorial)
+      const testimSlides = document.querySelectorAll('.testim-slide');
+      const testimDots = document.querySelectorAll('.testim-dot');
+      const testimPrevBtn = document.getElementById('testimPrevBtn');
+      const testimNextBtn = document.getElementById('testimNextBtn');
+      const testimBox = document.getElementById('testimonialBox');
+
+      if (testimSlides.length > 0) {
+        let currentTestimIndex = 0;
+        let testimTimer = null;
+        const totalTestim = testimSlides.length;
+        const AUTO_INTERVAL = 4500; // Passa automaticamente a cada 4.5 segundos
+
+        function showTestim(index) {
+          if (index < 0) index = totalTestim - 1;
+          if (index >= totalTestim) index = 0;
+          currentTestimIndex = index;
+
+          testimSlides.forEach((slide, idx) => {
+            if (idx === index) {
+              slide.classList.add('active');
+            } else {
+              slide.classList.remove('active');
+            }
+          });
+
+          testimDots.forEach((dot, idx) => {
+            if (idx === index) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+        }
+
+        function nextTestim() {
+          showTestim(currentTestimIndex + 1);
+        }
+
+        function prevTestim() {
+          showTestim(currentTestimIndex - 1);
+        }
+
+        function startAutoPlay() {
+          stopAutoPlay();
+          testimTimer = setInterval(nextTestim, AUTO_INTERVAL);
+        }
+
+        function stopAutoPlay() {
+          if (testimTimer) {
+            clearInterval(testimTimer);
+            testimTimer = null;
+          }
+        }
+
+        // Iniciar rotação automática
+        startAutoPlay();
+
+        // Pausar quando o mouse estiver sobre o feedback
+        if (testimBox) {
+          testimBox.addEventListener('mouseenter', stopAutoPlay);
+          testimBox.addEventListener('mouseleave', startAutoPlay);
+
+          // Suporte a swipe de toque no celular
+          let touchStartX = 0;
+          let touchEndX = 0;
+          testimBox.addEventListener('touchstart', e => {
+            stopAutoPlay();
+            touchStartX = e.changedTouches[0].screenX;
+          }, { passive: true });
+          testimBox.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 45) {
+              nextTestim();
+            } else if (touchEndX - touchStartX > 45) {
+              prevTestim();
+            }
+            startAutoPlay();
+          }, { passive: true });
+        }
+
+        // Setas anteriores / próximas
+        if (testimPrevBtn) {
+          testimPrevBtn.addEventListener('click', () => {
+            prevTestim();
+            startAutoPlay();
+          });
+        }
+        if (testimNextBtn) {
+          testimNextBtn.addEventListener('click', () => {
+            nextTestim();
+            startAutoPlay();
+          });
+        }
+
+        // Indicadores (dots)
+        testimDots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => {
+            showTestim(idx);
+            startAutoPlay();
+          });
+        });
+      }
+
+
+    });
+  </script>
+</body>
+</html>

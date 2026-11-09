@@ -11,7 +11,7 @@ export const lisamaCoursesData = [
     tags: ['Permiso B', 'Coche'],
     rating: 4.8,
     title: 'Permiso B (Coche Manual)',
-    dateRange: 'Prácticas en Rabasa',
+    dateRange: 'Prácticas en Babel',
     hostType: 'Mismo coche en examen',
     isTopRated: true,
     description: 'Preparación integral teórica y práctica en circuitos oficiales de la DGT con profesores pacientes y sin estrés.',

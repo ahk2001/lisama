@@ -15,7 +15,7 @@ export const lisamaCoursesData = [
     hostType: 'Mismo coche en examen',
     isTopRated: true,
     description: 'Preparación integral teórica y práctica en circuitos oficiales de la DGT con profesores pacientes y sin estrés.',
-    pricePerNight: 'Desde 137€',
+    pricePerNight: '160€',
     priceLabel: 'matrícula y test DGT',
     whatsappLink: 'https://wa.me/34689810417?text=Hola%20Autoescuela%20Lisama%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Permiso%20B',
   },
